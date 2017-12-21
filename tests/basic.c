@@ -8,7 +8,7 @@ int main()
   double rho[5] = {0.1, 0.2, 0.3, 0.4, 0.5};
   double sigma[5] = {0.2, 0.3, 0.4, 0.5, 0.6};
   double exc[5];
-  int i, vmajor, vminor, vmicro, func_id = 1;
+  int i, vmajor, vminor, vmicro, func_id = 130; // 1 // PBE and LDA correlation
 
   xc_version(&vmajor, &vminor);
   printf("Libxc version: %d.%d\n", vmajor, vminor);

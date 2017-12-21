@@ -23,13 +23,24 @@ class TestXC(unittest.TestCase):
         self.assertAlmostEqual(EXC, -0.58913097576700, places=3)
 
     def test_simple_libxc(self):
-        xc = XC(rho=np.array([0.1, 0.2, 0.3, 0.4, 0.5]), sgm=np.array([0.2, 0.3, 0.4, 0.5, 0.6]), func_id=[1,])
 
-        exc = xc.get_exc()
+        refs = [
+                np.array([ -0.342809, -0.431912, -0.494416, -0.544175, -0.586194]),
+                np.array([ -0.007211, -0.028422, -0.041781, -0.049695, -0.054872]),
+                ]
 
-        ref = np.array([ -0.342809, -0.431912, -0.494416, -0.544175, -0.586194] )
+        funcs = [
+                [1,],
+                [130,],
+                ]
 
-        np.testing.assert_allclose(exc, ref, atol=1.e-5, rtol=0)
+        for ref, func in zip(refs, funcs):
+            xc = XC(rho=np.array([0.1, 0.2, 0.3, 0.4, 0.5]), sgm=np.array([0.2, 0.3, 0.4, 0.5, 0.6]), func_id=func)
+            exc = xc.get_exc()
+
+            print exc
+
+            np.testing.assert_allclose(exc, ref, atol=1.e-5, rtol=0)
 
 if __name__ == '__main__':
     unittest.main()

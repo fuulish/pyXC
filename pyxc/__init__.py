@@ -26,6 +26,8 @@ class XC(object):
 
                 sgm = grd[0]*grd[0] + grd[1]*grd[1] + grd[2]*grd[2]
                 self.sgm = sgm.flatten().astype('float64')
+            else:
+                self.sgm = None
 
     def get_exc(self):
 

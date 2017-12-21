@@ -2,7 +2,7 @@ import cython
 import numpy as np
 cimport numpy as np
 
-cdef extern from "xceval.h":
+cdef extern from "xceval.c":
     int xc_energy_density( double * exc, double * rho, double * sigma, int len, int * func_id, int nfunc )
 
 @cython.boundscheck(False)

@@ -6,7 +6,7 @@ from Cython.Build import cythonize
 ext_modules=[
     Extension("pyxc/xceval",
               sources=["pyxc/xceval.pyx"],
-              libraries=["xc", "evalXC"] # Unix-like specific
+              libraries=["xc"], #, "evalXC"] # Unix-like specific
     )
 ]
 

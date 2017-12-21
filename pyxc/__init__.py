@@ -1,6 +1,6 @@
 import numpy as np
 from copy import deepcopy
-from xceval import calc_exc
+from evalxc import calc_exc
 
 class XC(object):
 

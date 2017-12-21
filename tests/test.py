@@ -9,7 +9,7 @@ class TestXC(unittest.TestCase):
     def test_water_dimer(self):
         c = cube.Cube('data/density.cube')
         xc = XC(c)
-        exc = xc.get_exc()
+        exc = xc.exc
         EXC = (exc * c.data.flatten()).sum() * c.dV
 
         self.assertAlmostEqual(EXC, -8.2939935007, places=5)
@@ -17,7 +17,7 @@ class TestXC(unittest.TestCase):
     def test_cp2k_hydrogen(self):
         c = cube.Cube('data/cp2k_rtp_0_0_1-ELECTRON_DENSITY-1.cube')
         xc = XC(c)
-        exc = xc.get_exc()
+        exc = xc.exc
         EXC = (exc * c.data.flatten()).sum() * c.dV
 
         self.assertAlmostEqual(EXC, -0.58913097576700, places=3)
@@ -36,7 +36,7 @@ class TestXC(unittest.TestCase):
 
         for ref, func in zip(refs, funcs):
             xc = XC(rho=np.array([0.1, 0.2, 0.3, 0.4, 0.5]), sgm=np.array([0.2, 0.3, 0.4, 0.5, 0.6]), func_id=func)
-            exc = xc.get_exc()
+            exc = xc.exc
 
             np.testing.assert_allclose(exc, ref, atol=1.e-5, rtol=0)
 

@@ -29,9 +29,22 @@ class XC(object):
             else:
                 self.sgm = None
 
-    def get_exc(self):
+        self._exc = None
+
+    def calculate_exc(self):
 
         exc = np.zeros_like(self.rho)
         calc_exc(self.rho, self.sgm, exc, self.func_id)
 
         return exc
+
+    @property
+    def exc(self):
+        if self._exc is None:
+            self._exc = self.calculate_exc()
+
+        return self._exc
+
+    @exc.setter
+    def exc(self, value):
+        raise RuntimeError('Cannot set "exc" property')

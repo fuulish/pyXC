@@ -38,8 +38,6 @@ class TestXC(unittest.TestCase):
             xc = XC(rho=np.array([0.1, 0.2, 0.3, 0.4, 0.5]), sgm=np.array([0.2, 0.3, 0.4, 0.5, 0.6]), func_id=func)
             exc = xc.get_exc()
 
-            print exc
-
             np.testing.assert_allclose(exc, ref, atol=1.e-5, rtol=0)
 
 if __name__ == '__main__':

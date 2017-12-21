@@ -23,10 +23,9 @@ class TestXC(unittest.TestCase):
         self.assertAlmostEqual(EXC, -0.58913097576700, places=3)
 
     def test_simple_libxc(self):
-        c = cube.Cube('data/simple.cube')
-        xc = XC(c, func_id=[1,])
+        xc = XC(rho=np.array([0.1, 0.2, 0.3, 0.4, 0.5]), sgm=np.array([0.2, 0.3, 0.4, 0.5, 0.6]), func_id=[1,])
 
-        exc = xc.get_exc(sgm=np.array([0.2, 0.3, 0.4, 0.5, 0.6]))
+        exc = xc.get_exc()
 
         ref = np.array([ -0.342809, -0.431912, -0.494416, -0.544175, -0.586194] )
 

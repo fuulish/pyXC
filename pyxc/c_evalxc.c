@@ -35,10 +35,8 @@ long int c_xc_energy_density( double * exc, double * rho, double * sigma, long i
         break;
     }
 
-    for( k=0; k<len; ++k ) {
+    for( k=0; k<len; ++k )
       exc[k] += tmpexc[k];
-      // printf("%20.14f\n", exc[k]);
-    }
 
     // and need to let the functional go
     xc_func_end(&func);

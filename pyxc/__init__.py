@@ -15,13 +15,12 @@ class XC(object):
         dx = self.c.box_dim / self.c.data.shape
         grd = np.gradient(self.c.data, dx[0], dx[1], dx[2])
 
-        dns = deepcopy(self.c.data)
-        dns = dns.flatten().astype('float64')
+        dns = self.c.data.flatten().astype('float64')
 
-        sgm = np.linalg.norm(grd, axis=0)**2
+        sgm = grd[0]*grd[0] + grd[1]*grd[1] + grd[2]*grd[2]
         sgm = sgm.flatten().astype('float64')
 
         exc = np.zeros_like(dns)
-        exc = calc_exc(exc, dns, sgm, self.func_id)
+        calc_exc(dns, sgm, exc, self.func_id)
 
         return exc

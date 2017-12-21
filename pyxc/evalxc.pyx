@@ -16,4 +16,4 @@ def calc_exc(np.ndarray[double, ndim=1, mode="c"] density not None, np.ndarray[d
 
     err = c_xc_energy_density( &exc[0], &density[0], &sigma[0], nrho, &func_id[0], nfunc )
 
-    return exc
+    #return exc

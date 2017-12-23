@@ -1,6 +1,6 @@
 
-all:
-	@echo "Only for cleaning"
+local:
+	python setup.py build_ext --inplace
 
 clean:
 	python setup.py clean

@@ -27,7 +27,6 @@ long int c_xc_energy_density( double * exc, double * rho, double * sigma, long i
     {
       case XC_FAMILY_LDA:
         xc_lda_exc ( &func, len, rho, tmpexc );
-        // printf("HELLO\n");
         break;
       case XC_FAMILY_GGA:
       case XC_FAMILY_HYB_GGA:

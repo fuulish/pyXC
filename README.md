@@ -6,11 +6,11 @@ Please refer to the tests/ subdirectory for a couple of examples
 ## Installation
 
 Requirements:
-    - hard:
-        - cython
-        - libXC
-    - optional:
-        - cube (currently not publicly availble)
+- hard:
+    - cython
+    - libXC
+- optional:
+    - cube (currently not publicly availble)
 
 To build the Cython extension inplace with the repository:
 

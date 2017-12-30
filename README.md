@@ -7,12 +7,13 @@ Please refer to the tests/ subdirectory for a couple of examples
 
 Requirements:
 - hard:
-    - cython
-    - libXC
+    - Cython (http://cython.org/)
+    - libxc (https://gitlab.com/libxc/libxc)
+    - NumPy (http://www.numpy.org/)
 - optional:
     - cube (currently not publicly availble)
 
-To build the Cython extension inplace with the repository:
+To build the C extension in place with the repository:
 
     $ python setup.py build_ext --inplace
 

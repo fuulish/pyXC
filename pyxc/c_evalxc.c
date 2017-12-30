@@ -1,3 +1,5 @@
+/* adapted from https://gitlab.com/libxc/libxc, licensed under Mozilla Public License Version 2.0 */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <xc.h>

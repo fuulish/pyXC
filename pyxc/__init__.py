@@ -22,7 +22,7 @@ class XC(object):
         else:
             if c is not None:
                 dx = self.c.box_dim / self.c.data.shape
-                grd = np.gradient(self.c.data, dx[0], dx[1], dx[2])
+                grd = np.gradient(self.c.data, dx[0], dx[1], dx[2], edge_order=2)
 
                 sgm = grd[0]*grd[0] + grd[1]*grd[1] + grd[2]*grd[2]
                 self.sgm = sgm.flatten().astype('float64')

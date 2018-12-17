@@ -6,14 +6,14 @@
 
 long int c_xc_energy_density( double * exc, double * rho, double * sigma, long int len, long int * func_id, long int nfunc )
 {
-  int i, k, vmajor, vminor;
+  int i, k, vmajor, vminor, vmicro;
 
   xc_func_type func;
   double *tmpexc;
 
   tmpexc = ( double * ) malloc ( len * sizeof ( double ) );
 
-  xc_version(&vmajor, &vminor);
+  xc_version(&vmajor, &vminor, &vmicro);
   // printf("Libxc version: %d.%d\n", vmajor, vminor);
 
   for ( i=0; i<nfunc; i++ ) {
